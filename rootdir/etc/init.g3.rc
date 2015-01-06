@@ -1113,6 +1113,10 @@ on property:hw.ftm_ptt_start=1
 on property:hw.ftm_ptt_start=0
     stop ftm_ptt
 
+on property:init.svc.bootanim=running
+    # Disable LG screen sharpening
+    write /sys/devices/virtual/graphics/fb0/sharpening 0
+
 on property:init.svc.bootanim=stopped
     start qcom-post-boot
     start usf-post-boot
